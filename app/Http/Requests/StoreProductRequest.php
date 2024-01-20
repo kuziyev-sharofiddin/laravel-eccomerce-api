@@ -11,18 +11,19 @@ class StoreProductRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return request()->user()->can('product:create');
     }
 
     /**
      * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
     public function rules(): array
     {
         return [
-            //
+            'category_id' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
         ];
     }
 }

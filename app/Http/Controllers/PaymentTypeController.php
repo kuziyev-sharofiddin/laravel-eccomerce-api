@@ -9,12 +9,9 @@ use Illuminate\Database\Eloquent\Collection;
 
 class PaymentTypeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(): Collection
+    public function index()
     {
-        return PaymentType::all();
+        return $this->response(PaymentType::all());
     }
 
     /**
@@ -41,13 +38,6 @@ class PaymentTypeController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(PaymentType $paymentType)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
