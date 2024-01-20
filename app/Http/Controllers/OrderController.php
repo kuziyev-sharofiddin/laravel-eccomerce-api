@@ -8,8 +8,7 @@ use App\Models\DeliveryMethod;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
-use App\Models\Product;
-use App\Models\Stock;
+
 use App\Models\UserAddress;
 use App\Repositories\OrderRepository;
 use App\Repositories\StockRepository;
@@ -58,7 +57,7 @@ class OrderController extends Controller
     }
 
 
-    public function show(Order $order): JsonResponse
+    public function show($order): JsonResponse
     {
         return $this->response(new OrderResource($order));
     }
@@ -66,7 +65,7 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Order $order)
+    public function edit($order)
     {
         //
     }
@@ -74,7 +73,7 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateOrderRequest $request, Order $order)
+    public function update(UpdateOrderRequest $request,$order)
     {
         //
     }
@@ -82,7 +81,7 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy($order)
     {
         $order->delete();
         return 1;
