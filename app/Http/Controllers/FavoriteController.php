@@ -28,9 +28,7 @@ class FavoriteController extends Controller
     }
 
 
-    /*
-     * TODO refactor responses. make standart format
-     * */
+
     public function destroy($favorite_id): JsonResponse
     {
         if (auth()->user()->hasFavorite($favorite_id)){
