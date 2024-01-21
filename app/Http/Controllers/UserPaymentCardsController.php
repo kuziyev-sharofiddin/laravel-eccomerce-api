@@ -32,17 +32,12 @@ class UserPaymentCardsController extends Controller
         return $this->success('card added');
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(UserPaymentCards $userPaymentCards)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(UserPaymentCards $userPaymentCards)
     {
         //
